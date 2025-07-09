@@ -23,5 +23,5 @@ According to google, four countries don't use a calendar that works with ISO.
 In many places where I *could* use more advanced integer types (such as `u16`) I am not. This is because postgres
 doesn't have unsigned integers.
 
-Anywhere that money is involved, I'm using an i64. Decimals don't exist in the data. They can be represented in the UI
-by simply dividing the value by 100.
+Anywhere that money is involved, I'm using an `i64`. Decimals don't exist in the data. They can be represented in the UI
+by simply dividing the value by 100. This is done to simplify translation of the data.
