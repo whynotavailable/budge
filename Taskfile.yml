@@ -7,3 +7,7 @@ tasks:
     dir: ./api
     cmds:
       - cargo run
+  ui:
+    dir: ./ui
+    cmds:
+      - bun run dev
