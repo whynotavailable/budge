@@ -9,16 +9,24 @@ pub struct Account {
     pub id: Option<Uuid>, // Should only be missing on creates.
     pub name: String,
     pub starting_balance: i64, // this is cents.
+    pub last_clear: i64,
+}
+
+pub struct Clears {
+    pub tenant: Uuid,
+    pub account_id: Uuid,
+    pub date: i32,
 }
 
 pub struct Transaction {
     pub tenant: Uuid,
     pub account_id: Uuid,
     pub id: Option<Uuid>, // will be a UUID
-    pub date: u64,
-    pub ord: i32, // pg has no u32
+    pub date: i32,
+    pub ordinal: i32,
     pub category_path: String,
     pub amount: i64, // this is cents.
+    pub cleard: bool,
 }
 
 pub struct TransactionCategory {
