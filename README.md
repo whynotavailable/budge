@@ -28,5 +28,5 @@ by simply dividing the value by 100. This is done to simplify translation of the
 
 ## License
 
-You can consider any code seen in the stream as cc0. You are free to do whatever you want with the code, but I provide
-no warranty or support.
+You can consider any code seen on stream as cc0. You are free to do whatever you want with the code, but I provide no
+warranty or support.
