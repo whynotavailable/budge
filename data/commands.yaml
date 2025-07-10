@@ -1,0 +1,1 @@
+basic: SELECT 23 as name;
