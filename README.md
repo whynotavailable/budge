@@ -25,3 +25,8 @@ doesn't have unsigned integers.
 
 Anywhere that money is involved, I'm using an `i64`. Decimals don't exist in the data. They can be represented in the UI
 by simply dividing the value by 100. This is done to simplify translation of the data.
+
+## Open Source
+
+While I am using a FOSS license (one specifically noted by the OSI), this software is more or less just public. I am not
+looking for PRs, and will not accept them. If you would like a feature, implement it yourself.
