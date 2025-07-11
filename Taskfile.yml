@@ -5,6 +5,8 @@ version: "3"
 tasks:
   api:
     dir: ./api
+    env:
+      HOST: 0.0.0.0:3000
     dotenv:
       - ./.env
     cmds:
