@@ -3,7 +3,10 @@ use axum::{
     http::{Method, StatusCode},
     routing::get,
 };
-use tower_http::cors::CorsLayer;
+use tower_http::{
+    cors::CorsLayer,
+    services::{ServeDir, ServeFile},
+};
 use whynot_errors::AppError;
 
 async fn not_found() -> AppError {
@@ -24,4 +27,7 @@ pub fn routes() -> Router {
     Router::new()
         .route("/health", get(|| async { "ok" })) // The only GET
         .nest("/api", api_routes())
+        .fallback_service(
+            ServeDir::new("public").not_found_service(ServeFile::new("public/index.html")),
+        )
 }
