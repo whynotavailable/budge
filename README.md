@@ -25,8 +25,3 @@ doesn't have unsigned integers.
 
 Anywhere that money is involved, I'm using an `i64`. Decimals don't exist in the data. They can be represented in the UI
 by simply dividing the value by 100. This is done to simplify translation of the data.
-
-## License
-
-You can consider any code seen on stream as cc0. You are free to do whatever you want with the code, but I provide no
-warranty or support.
