@@ -1,4 +1,9 @@
-use axum::{Router, http::StatusCode, routing::get};
+use axum::{
+    Router,
+    http::{Method, StatusCode},
+    routing::get,
+};
+use tower_http::cors::CorsLayer;
 use whynot_errors::AppError;
 
 async fn not_found() -> AppError {
@@ -9,7 +14,10 @@ async fn not_found() -> AppError {
 }
 
 fn api_routes() -> Router {
-    Router::new().fallback(not_found)
+    Router::new()
+        .fallback(not_found)
+        // TODO: Update this for prod builds to only allow the host/port that it's running from.
+        .layer(CorsLayer::permissive().allow_methods([Method::GET, Method::POST]))
 }
 
 pub fn routes() -> Router {
