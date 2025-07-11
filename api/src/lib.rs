@@ -1,11 +1,12 @@
-use axum::{Router, routing::get};
+use routes::routes;
 use whynot_errors::{SetupError, SetupResult};
 
 mod models;
+mod routes;
 
 pub async fn run() -> SetupResult {
     // build our application with a single route
-    let app = Router::new().route("/", get(|| async { "Hello, World!" }));
+    let app = routes();
 
     // run our app with hyper, listening globally on port 3000
     let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await.unwrap();
