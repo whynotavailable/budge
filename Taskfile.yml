@@ -5,8 +5,14 @@ version: "3"
 tasks:
   api:
     dir: ./api
+    dotenv:
+      - ./.env
     cmds:
       - cargo run
+  api-lint:
+    dir: ./api
+    cmds:
+      - cargo clippy
   ui:
     dir: ./ui
     cmds:

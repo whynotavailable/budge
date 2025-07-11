@@ -12,3 +12,10 @@ tokio = { version = "1.46.1", features = ["full"] }
 tower-http = { version = "0.6.6", features = ["fs", "cors"] }
 uuid = { version = "1.17.0", features = ["serde", "v4"] }
 whynot-errors = "0.2.3"
+
+# lints to make sure you aren't being a dummy
+[lints.clippy]
+unwrap_used = "deny"
+expect_used = "deny"
+panic = "deny"
+indexing_slicing = "deny"
